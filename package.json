@@ -1,0 +1,42 @@
+{
+  "name": "vinyl-capture",
+  "version": "0.1.0",
+  "description": "A simple cross-platform USB vinyl recorder",
+  "main": "src/main.js",
+  "author": "Vinyl Capture",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder --mac --win --linux"
+  },
+  "devDependencies": {
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.vinylcapture.app",
+    "productName": "Vinyl Capture",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "AudioVideo"
+    }
+  },
+  "dependencies": {
+    "libflacjs": "^5.6.0"
+  }
+}

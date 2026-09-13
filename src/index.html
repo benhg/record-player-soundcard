@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Capture</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><div class="eyebrow">USB AUDIO RECORDER</div><h1>Vinyl Capture</h1><p>Bring your records into the computer, one side at a time.</p></header>
+    <section class="card setup">
+      <label for="input-device">Record from</label>
+      <div class="device-row"><select id="input-device"><option>Looking for audio inputs…</option></select><button id="refresh" class="quiet">↻ Refresh</button></div>
+      <div class="tips"><span class="dot"></span><span id="status">Connect the turntable by USB, then choose its audio input.</span></div>
+    </section>
+    <section class="card recorder">
+      <div class="meter-label"><span>INPUT LEVEL</span><span id="level-text">—</span></div><div class="meter"><div id="meter-fill"></div></div>
+      <div class="time" id="timer">00:00:00</div>
+      <div class="controls"><button id="record" class="record"><span></span> Start recording</button><button id="stop" disabled>Stop</button></div>
+      <div class="save-format"><label for="format">SAVE AS</label><select id="format"><option value="wav">WAV · uncompressed PCM</option><option value="flac">FLAC · lossless compressed</option></select></div>
+    </section>
+    <section class="card help"><div><strong>No turntable connected?</strong><br><span>Use the simulator to test the workflow and create a short tone recording.</span></div><button id="simulate" class="quiet">Test simulator</button></section>
+    <div id="message" class="message" role="status"></div>
+  </main>
+  <script src="wav.js"></script><script src="renderer.js"></script>
+</body>
+</html>
